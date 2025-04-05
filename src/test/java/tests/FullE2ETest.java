@@ -30,7 +30,7 @@ public class FullE2ETest {
 
     @Test
     void fullPurchaseTest() {
-        // Фильтрация товаров
+        //$ Фильтрация товаров
         actor.attemptsTo(
                 Enter.theText("1000").into(CatalogPage.PRICE_FROM),
                 Enter.theText("100000").into(CatalogPage.PRICE_TO),
