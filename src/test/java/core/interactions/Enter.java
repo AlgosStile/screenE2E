@@ -18,6 +18,10 @@ public class Enter implements Task {
         return new EnterBuilder(text);
     }
 
+    public static EnterBuilder theValue(String value) {
+        return new EnterBuilder(value);
+    }
+
     @Override
     public void perform(Actor actor) {
         Locator locator = target.resolveFor(actor);
@@ -37,5 +41,6 @@ public class Enter implements Task {
         public Enter into(Target target) {
             return new Enter(text, target);
         }
+
     }
 }

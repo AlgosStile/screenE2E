@@ -24,4 +24,7 @@ public class Click implements Task {
                 .setTimeout(5000));
         locator.click();
     }
+    public RepeatedTask repeat(int times) {
+        return new RepeatedTask(this, times);
+    }
 }
