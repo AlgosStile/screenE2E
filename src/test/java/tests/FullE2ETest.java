@@ -2,10 +2,7 @@ package tests;
 
 import core.Actor;
 import core.abilities.BrowseTheWeb;
-import core.interactions.Click;
-import core.interactions.Enter;
-import core.interactions.Select;
-import core.interactions.Wait;
+import core.interactions.*;
 import core.questions.Text;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,6 +29,7 @@ public class FullE2ETest {
     void fullPurchaseTest() {
         //$ Фильтрация товаров
         actor.attemptsTo(
+                Clear.field(CatalogPage.PRICE_FROM),
                 Enter.theText("1000").into(CatalogPage.PRICE_FROM),
                 Enter.theText("100000").into(CatalogPage.PRICE_TO),
                 Click.on(CatalogPage.CATEGORY_SELECT),
@@ -42,8 +40,9 @@ public class FullE2ETest {
         for (int i = 0; i < 10; i++) {
             actor.attemptsTo(
                     Click.on(CatalogPage.COLOR_OPTION.withArgs(i)),
+                    Wait.forSeconds(1),
                     Click.on(CatalogPage.APPLY_FILTER_BUTTON),
-                    Wait.forSeconds(2)
+                    Wait.forSeconds(1)
             );
         }
 
