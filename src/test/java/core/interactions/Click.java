@@ -12,7 +12,7 @@ public class Click implements Task {
         this.target = target;
     }
 
-    public static Click on(Target target) {
+    public static Task on(Target target) {
         return new Click(target);
     }
 

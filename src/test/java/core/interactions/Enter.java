@@ -18,9 +18,6 @@ public class Enter implements Task {
         return new EnterBuilder(text);
     }
 
-    public static EnterBuilder theValue(String value) {
-        return new EnterBuilder(value);
-    }
 
     @Override
     public void perform(Actor actor) {

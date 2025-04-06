@@ -1,7 +1,11 @@
 package core.interactions;
 
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.WaitForSelectorState;
 import core.Actor;
-import core.interactions.Task;
+import core.abilities.BrowseTheWeb;
+import core.ui.Target;
 
 public class Wait implements Task {
     private final long seconds;
@@ -10,8 +14,12 @@ public class Wait implements Task {
         this.seconds = seconds;
     }
 
-    public static Wait forSeconds(long seconds) {
+    public static Task forSeconds(long seconds) {
         return new Wait(seconds);
+    }
+
+    public static Task forNetworkIdle() {
+        return new Wait(10);
     }
 
     @Override
@@ -22,5 +30,31 @@ public class Wait implements Task {
             Thread.currentThread().interrupt();
             throw new RuntimeException("Wait interrupted", e);
         }
+    }
+
+    public static Task forElementToBeVisible(Target target) {
+        return new Task() {
+            @Override
+            public void perform(Actor actor) {
+                target.resolveFor(actor)
+                        .waitFor(new Locator.WaitForOptions()
+                                .setState(WaitForSelectorState.VISIBLE)
+                                .setTimeout(10000));
+            }
+        };
+    }
+
+    public static Task forCondition(ExpectedCondition condition, String description) {
+        return new Task() {
+            @Override
+            public void perform(Actor actor) {
+                Page page = actor.usingAbility(BrowseTheWeb.class).getPage();
+                page.waitForFunction(
+                        description,
+                        condition.getJsPredicate(),
+                        new Page.WaitForFunctionOptions().setTimeout(10000)
+                );
+            }
+        };
     }
 }

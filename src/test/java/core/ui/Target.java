@@ -5,11 +5,10 @@ import core.Actor;
 import core.abilities.BrowseTheWeb;
 
 public class Target {
-    private final String description;
-    private final String selector;
+    public final String selector;
+    private String description;
 
     public Target(String description, String selector) {
-        this.description = description;
         this.selector = selector;
     }
 
@@ -22,14 +21,11 @@ public class Target {
                 .getPage()
                 .locator(selector);
     }
-
-    public Target withArgs(Object... args) {
-        return new Target(description, String.format(selector, args));
-    }
-
-    public Target withText(String text) {
-        String newSelector = String.format("%s:has-text('%s')", this.selector, text);
-        return new Target(this.description + " с текстом '" + text + "'", newSelector);
+    public Target of(String value) {
+        return new Target(
+                this.description + " with value " + value,
+                String.format(this.selector, value)
+        );
     }
 
     public static class TargetBuilder {
@@ -41,12 +37,6 @@ public class Target {
 
         public Target locatedBy(String selector) {
             return new Target(description, selector);
-        }
-
-
-        public static Target containingText(String text) {
-            return new Target("Element containing text: " + text,
-                    String.format("//*[contains(normalize-space(), '%s')]", text));
         }
     }
 }
