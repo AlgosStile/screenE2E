@@ -18,10 +18,6 @@ public class Wait implements Task {
         return new Wait(seconds);
     }
 
-    public static Task forNetworkIdle() {
-        return new Wait(10);
-    }
-
     @Override
     public void perform(Actor actor) {
         try {
@@ -43,6 +39,7 @@ public class Wait implements Task {
             }
         };
     }
+
 
     public static Task forCondition(ExpectedCondition condition, String description) {
         return new Task() {

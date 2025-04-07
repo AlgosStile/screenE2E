@@ -1,7 +1,6 @@
 package core.questions;
 
 import core.Actor;
-import core.interactions.Task;
 import core.ui.Target;
 
 public class VerifyText implements Question<Boolean> {
@@ -19,7 +18,17 @@ public class VerifyText implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String actualText = target.resolveFor(actor).textContent().trim();
-        return actualText.equals(expectedText);
+        String actualText = Text.of(target).answeredBy(actor).trim();
+
+        String cleanActual = actualText.replaceAll("№\\s+\\d+", "").trim();
+        String expected = expectedText.trim();
+
+        if (!cleanActual.equals(expected)) {
+            throw new AssertionError(
+                    String.format("Текст не совпадает! Ожидалось: '%s', Получено: '%s' (оригинальный текст: '%s')",
+                            expected, cleanActual, actualText)
+            );
+        }
+        return true;
     }
 }

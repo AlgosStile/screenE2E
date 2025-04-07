@@ -22,7 +22,8 @@ public class WaitForUrl implements Task {
     @Override
     public void perform(Actor actor) {
         Page page = actor.usingAbility(BrowseTheWeb.class).getPage();
-        page.waitForURL(url -> url.equals(expectedUrl), new Page.WaitForURLOptions().setTimeout(10000));
+        page.waitForURL(url -> url.equals(expectedUrl),
+                new Page.WaitForURLOptions().setTimeout(10000));
     }
 
     public static class ToContain implements Task {

@@ -17,7 +17,7 @@ public class ProductPage {
             .locatedBy("//button[@aria-label='Убрать один товар']");
 
     public static final Target ADD_TO_CART_BUTTON = Target.the("Кнопка добавления в корзину")
-            .locatedBy("button.add-to-cart");
+            .locatedBy("//button[@type='submit']");
 }
 
 

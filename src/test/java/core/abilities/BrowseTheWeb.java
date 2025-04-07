@@ -1,6 +1,7 @@
 package core.abilities;
 
 import com.microsoft.playwright.*;
+import pages.UrlPage;
 
 public class BrowseTheWeb {
     private final Playwright playwright;
@@ -14,7 +15,7 @@ public class BrowseTheWeb {
                 .setSlowMo(500));
 
         page = browser.newPage();
-        page.navigate("https://algosstile.github.io/vue-app/index.html#/");
+        page.navigate(UrlPage.MAIN_URL);
     }
 
     public static BrowseTheWeb withBrowser() {

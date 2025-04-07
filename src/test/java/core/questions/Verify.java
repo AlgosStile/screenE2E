@@ -2,7 +2,6 @@ package core.questions;
 
 import core.Actor;
 import core.interactions.Task;
-import core.questions.Question;
 
 public class Verify implements Task {
     private final Question<Boolean> question;
