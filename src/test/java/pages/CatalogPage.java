@@ -21,7 +21,5 @@ public class CatalogPage {
     public static final Target PRODUCT_ITEM = Target.the("Товар")
             .locatedBy("img[alt='Квадрокоптер Xiaomi Mi Drone Mini']");
 
-
-
 }
 

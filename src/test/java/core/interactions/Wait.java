@@ -39,19 +39,4 @@ public class Wait implements Task {
             }
         };
     }
-
-
-    public static Task forCondition(ExpectedCondition condition, String description) {
-        return new Task() {
-            @Override
-            public void perform(Actor actor) {
-                Page page = actor.usingAbility(BrowseTheWeb.class).getPage();
-                page.waitForFunction(
-                        description,
-                        condition.getJsPredicate(),
-                        new Page.WaitForFunctionOptions().setTimeout(10000)
-                );
-            }
-        };
-    }
 }
