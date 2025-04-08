@@ -2,6 +2,11 @@ package pages;
 
 import core.ui.Target;
 
+/**
+ * Страница пагинации, содержащая целевые элементы,
+ * представляющие номера страниц для навигации.
+ * Включает элементы пагинации для страниц 2, 3, 4, 5, 6 и 7.
+ */
 public class PaginationPage {
     public static final Target PAGINATION_2 = Target.the("Пагинация 2")
             .locatedBy("//li[@class='pagination__item']/a[@class='pagination__link' and normalize-space()='2']");

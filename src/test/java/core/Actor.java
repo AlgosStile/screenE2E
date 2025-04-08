@@ -6,6 +6,11 @@ import core.questions.Question;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Представляет пользователя (актора), взаимодействующего с системой через задачи и проверки.
+ * Может обладать способностями (например, работать с браузером), выполнять последовательности задач
+ * и проверять состояние системы через вопросы. Реализует ядро паттерна Screenplay.
+ */
 public class Actor {
     private final String name;
     private final List<Object> abilities = new ArrayList<>();

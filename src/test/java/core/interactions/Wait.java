@@ -7,6 +7,11 @@ import core.Actor;
 import core.abilities.BrowseTheWeb;
 import core.ui.Target;
 
+/**
+ * Задача для ожидания определенного времени или видимости элемента.
+ * Позволяет приостановить выполнение на заданное количество секунд или дождаться,
+ * пока целевой элемент станет видимым.
+ */
 public class Wait implements Task {
     private final long seconds;
 

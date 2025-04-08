@@ -2,6 +2,12 @@ package pages;
 
 import core.ui.Target;
 
+/**
+ * Страница каталога, содержащая целевые элементы,
+ * с которыми может взаимодействовать актер.
+ * Включает поля для фильтрации по цене, кнопки для применения и сброса фильтров,
+ * а также выбор категории и элемент товара.
+ */
 public class CatalogPage {
     public static final Target PRICE_FROM = Target.the("Поле 'Цена от'")
             .locatedBy("input[name='min-price']");

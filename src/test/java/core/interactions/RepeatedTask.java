@@ -2,6 +2,11 @@ package core.interactions;
 
 import core.Actor;
 
+/**
+ * Задача для многократного выполнения другой задачи.
+ * Позволяет выполнять одну и ту же задачу несколько раз с паузой между выполнениями,
+ * что удобно для тестирования сценариев, требующих повторных действий.
+ */
 public class RepeatedTask implements Task {
     private final Task task;
     private final int times;

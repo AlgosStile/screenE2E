@@ -4,6 +4,11 @@ import com.microsoft.playwright.Locator;
 import core.Actor;
 import core.abilities.BrowseTheWeb;
 
+/**
+ * Представляет целевой элемент на веб-странице, который может быть найден с помощью селектора.
+ * Позволяет создавать экземпляры целевых элементов с описанием и селектором,
+ * а также разрешать их для актера.
+ */
 public class Target {
     public final String selector;
     private String description;

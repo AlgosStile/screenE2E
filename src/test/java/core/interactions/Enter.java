@@ -5,6 +5,11 @@ import com.microsoft.playwright.options.WaitForSelectorState;
 import core.Actor;
 import core.ui.Target;
 
+
+/**
+ * Задача ввода текста в целевой элемент. Инкапсулирует процесс ожидания видимости элемента
+ * и заполнения его заданным текстом, упрощая автоматизацию ввода в тестах.
+ */
 public class Enter implements Task {
     private final String text;
     private final Target target;

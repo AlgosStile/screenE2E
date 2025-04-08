@@ -3,6 +3,11 @@ package core.abilities;
 import com.microsoft.playwright.*;
 import pages.UrlPage;
 
+/**
+ * Способность работы с веб-браузером через Playwright.
+ * Инициализирует Chromium, создает новую страницу и выполняет навигацию к базовому URL.
+ * Автоматически закрывает ресурсы (страницу, браузер, контекст) при завершении работы.
+ */
 public class BrowseTheWeb {
     private final Playwright playwright;
     private final Browser browser;

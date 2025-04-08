@@ -9,6 +9,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * Задача для создания снимка экрана текущей веб-страницы.
+ * Позволяет сохранить изображение в указанном файле и прикрепить его к отчету Allure.
+ */
 public class TakeScreenshot implements Task {
     private final String fileName;
 

@@ -4,6 +4,10 @@ import core.Actor;
 import core.ui.Target;
 import pages.CatalogPage;
 
+/**
+ * Задача для выбора цвета и применения фильтра.
+ * Выполняет клик по заданному варианту цвета и затем нажимает кнопку применения фильтра.
+ */
 public class SelectColorAndApply implements Task {
     private final Target colorOption;
 

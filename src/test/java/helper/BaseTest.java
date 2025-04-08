@@ -7,6 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
+/**
+ * Базовый класс для тестов, предоставляющий общую настройку для актера,
+ * который будет использоваться в тестах. Содержит методы для инициализации
+ * актера перед каждым тестом и для завершения работы после каждого теста.
+ */
 public class BaseTest {
     protected Actor actor;
 

@@ -5,6 +5,10 @@ import com.microsoft.playwright.options.WaitForSelectorState;
 import core.Actor;
 import core.ui.Target;
 
+/**
+ * Задача выполнения клика по элементу с ожиданием его видимости (5 секунд).
+ * Реализует паттерн Screenplay, поддерживает повторение действия через метод repeat().
+ */
 public class Click implements Task {
     private final Target target;
 

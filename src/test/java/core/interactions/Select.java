@@ -4,6 +4,10 @@ import com.microsoft.playwright.Locator;
 import core.Actor;
 import core.ui.Target;
 
+/**
+ * Задача для выбора значения из выпадающего списка.
+ * Позволяет выбрать заданный вариант в целевом элементе.
+ */
 public class Select implements Task {
     private final Target target;
     private final String value;

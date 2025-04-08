@@ -2,8 +2,13 @@ package pages;
 
 import core.ui.Target;
 
+/**
+ * Страница выбора цветов, содержащая целевые элементы,
+ * представляющие различные цветовые опции.
+ * Включает фиолетовый, желтый, черный, зеленый, голубой, серый,
+ * оранжевый, красный и белый цвета.
+ */
 public class ColorsPage {
-
     public static final Target PURPLE_COLOR_OPTION = Target.the("Фиолетовый цвет")
             .locatedBy("//span[contains(@style, 'rgb(146, 0, 224)')]");
 

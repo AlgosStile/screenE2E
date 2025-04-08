@@ -2,6 +2,12 @@ package pages;
 
 import core.ui.Target;
 
+/**
+ * Страница оформления заказа, содержащая целевые элементы,
+ * с которыми может взаимодействовать актер.
+ * Включает поля для ввода ФИО, адреса, телефона, email, комментариев,
+ * а также чекбокс для выбора доставки курьером и кнопку для оформления заказа.
+ */
 public class OrderPage {
     public static final Target FULL_NAME_INPUT = Target.the("Поле ФИО")
             .locatedBy("//input[contains(@placeholder, 'имя')]");

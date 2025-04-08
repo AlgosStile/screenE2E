@@ -4,6 +4,10 @@ import com.microsoft.playwright.Page;
 import core.Actor;
 import core.abilities.BrowseTheWeb;
 
+/**
+ * Задача для ожидания, пока URL страницы станет равным или будет содержать заданное значение.
+ * Позволяет проверять URL на соответствие или наличие определенной подстроки.
+ */
 public class WaitForUrl implements Task {
     private final String expectedUrl;
 

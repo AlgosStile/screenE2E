@@ -6,6 +6,10 @@ import core.Actor;
 import core.abilities.BrowseTheWeb;
 import core.ui.Target;
 
+/**
+ * Задача для прокрутки страницы в заданном направлении или к определенному элементу.
+ * Поддерживает прокрутку вверх, вниз, к нижней части страницы и к целевому элементу с возможностью повторной попытки.
+ */
 public class Scroll implements Task {
     private final ScrollDirection direction;
     private final Integer pixels;

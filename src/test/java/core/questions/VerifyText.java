@@ -3,6 +3,10 @@ package core.questions;
 import core.Actor;
 import core.ui.Target;
 
+/**
+ * Служит для проверки соответствия текстового содержимого целевого элемента
+ * ожидаемому тексту. Возвращает логическое значение, указывающее на результат проверки.
+ */
 public class VerifyText implements Question<Boolean> {
     private final Target target;
     private final String expectedText;
